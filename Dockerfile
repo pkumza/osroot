@@ -5,6 +5,7 @@ RUN apt-get update
 
 RUN apt-get install -y npm
 
+RUN apt-get install -y wget
 # Install Node
 RUN   \
   cd /opt && \
@@ -18,5 +19,5 @@ RUN   \
 EXPOSE 80
 COPY / /
 RUN npm install
-CMD ["nodejs", "bin/www"]
+CMD ["npm", "start"]
 
